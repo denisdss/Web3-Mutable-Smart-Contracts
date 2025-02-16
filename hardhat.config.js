@@ -4,10 +4,10 @@ require('@nomicfoundation/hardhat-toolbox');
 require('@openzeppelin/hardhat-upgrades');
 require('ethers');
 
-// Configurações de Solidity
+// Solidity settings
 module.exports = {
   solidity: {
-    version: "0.8.22",  // Versão do Solidity
+    version: "0.8.22",  // Solidity version
     settings: {
       optimizer: {
         enabled: true,
@@ -16,16 +16,16 @@ module.exports = {
     },
   },
   networks: {
-    // Configuração da rede Polygon
+    // Polygon network configuration
     polygon: {
-      url: `https://polygon-rpc.com/`,  // RPC público para Polygon
-      accounts: [process.env.PRIVATE_KEY],  // Usando chave privada da MetaMask (armazenada no .env)
+      url: `https://polygon-rpc.com/`,  // Public RPC for Polygon
+      accounts: [process.env.PRIVATE_KEY],  // Using private key from MetaMask (stored in .env)
       chainId: 137,  // Polygon Mainnet
     },
 
-    // Configuração para testnet Amoy
+    // Configuration for Amoy testnet
     amoy: {
-      url: `https://rpc-amoy.polygon.technology/`,  // RPC da Testnet Mumbai
+      url: `https://rpc-amoy.polygon.technology/`,  // RPC for Mumbai Testnet
       accounts: [process.env.PRIVATE_KEY],
       chainId: 80002,  // Polygon Mumbai Testnet
     },

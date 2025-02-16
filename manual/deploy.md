@@ -1,13 +1,13 @@
-# Deploy na rede Polygon ou Mumbai
+# Deploy on the Polygon or Mumbai network
 
-# Para realizar o deploy na rede Polygon ou Mumbai, você pode usar o comando abaixo:
+# To deploy on the Polygon or Mumbai network, you can use the command below:
 
-## Para a rede Polygon Mainnet:
+## For the Polygon Mainnet:
 
 npx hardhat run --network polygon scripts/deploy.js
 
-## Para a rede Testnet Mumbai:
+## For the Mumbai Testnet:
 
-npx hardhat run --network amoy scripts/deploy.js
+npx hardhat run --network mumbai scripts/deploy.js
 
-# Isso irá usar a chave privada da sua MetaMask e a URL do RPC configurada no hardhat.config.js para implantar o contrato.
+# This will use your MetaMask private key and the RPC URL configured in hardhat.config.js to deploy the contract.

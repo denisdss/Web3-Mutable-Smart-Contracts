@@ -1,18 +1,18 @@
 const { ethers, upgrades } = require("hardhat");
 
 async function main() {
-  // Obtendo o endereço do deployer
+  // Getting the deployer's address
   const [deployer] = await ethers.getSigners();
   console.log("Deploying contracts with the account:", deployer.address);
 
-  // Obtenha o contrato "MyToken" que será implantado
+  // Get the "MyToken" contract that will be deployed
   const MyToken = await ethers.getContractFactory("MyToken");
 
   const tokenName = "MyToken";
   const tokenSymbol = "MTK";
-  const initialSupply = ethers.parseUnits("1000000", 18); // 1 milhão de tokens com 18 casas decimais
+  const initialSupply = ethers.parseUnits("1000000", 18); // 1 million tokens with 18 decimal places
 
-  // Implante o contrato com proxy
+  // Deploy the contract with proxy
   const myToken = await upgrades.deployProxy(MyToken, [tokenName, tokenSymbol, initialSupply], { initializer: "initialize" });
   console.log("MyToken deployed to:", myToken.target);
 }

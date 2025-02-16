@@ -4,13 +4,13 @@ async function main() {
   const [deployer] = await ethers.getSigners();
   console.log("Upgrading contracts with the account:", deployer.address);
 
-  // Endereço do contrato proxy
-  const proxyAddress = "0xEae5A39026a8c0A6082c7ffBbfcd8aEADCa9332A"; // Substitua pelo endereço do proxy
+  // Proxy contract address
+  const proxyAddress = "0xEae5A39026a8c0A6082c7ffBbfcd8aEADCa9332A"; // Replace with the proxy address
 
-  // Obtenha a fábrica do contrato corretamente pelo nome
-  const Token = await ethers.getContractFactory("MyToken");  // Certifique-se de usar o nome correto aqui
+  // Get the contract factory correctly by name
+  const Token = await ethers.getContractFactory("MyToken");  // Make sure to use the correct name here
 
-  // Atualize o contrato usando o endereço do proxy
+  // Upgrade the contract using the proxy address
   const upgraded = await upgrades.upgradeProxy(proxyAddress, Token);
   console.log("MyToken upgraded:", upgraded.target);
 }
