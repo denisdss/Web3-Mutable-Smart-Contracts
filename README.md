@@ -61,7 +61,7 @@ npx hardhat run scripts/deploy.js --network amoy scripts/deploy.js
 
 ## 🤝 Contributing
 
-Feel free to submit pull requests or open issues!
+Feel free to contribute! Fork the repository, implement improvements, and submit a pull request or open issues. Any feedback is also welcome. 🚀
 
 ## 📜 License
 
